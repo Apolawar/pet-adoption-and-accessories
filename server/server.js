@@ -21,14 +21,15 @@ app.use(petRouter)
 app.use('/form', AdoptFormRoute)
 app.use('/admin', AdminRoute)
 
-mongoose.connect(process.env.mongooseURL)
-    .then(() => {
-        console.log('Connected to DB');
-        const PORT = 4000;
-        app.listen(PORT, () => {
-            console.log(`Listening on port ${PORT}`)
-        })
-    })
-    .catch((err) => {
-        console.error(err);
-    })
+mongoose
+  .connect("mongodb://localhost:27017/pet")
+  .then(() => {
+    console.log("Connected to DB");
+    const PORT = 4000;
+    app.listen(PORT, () => {
+      console.log(`Listening on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error(err);
+  });
