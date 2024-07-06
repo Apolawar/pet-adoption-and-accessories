@@ -1,8 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import logo from "./images/logo.png";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import logo from './images/logo.png';
+import Login from '../Login-logout/Loginn';
+import Button from 'react-bootstrap/Button';
+import { useAuth } from '../../context/AuthProvider';
 
 const Navbar = (props) => {
+
   return (
     <div className="navbar-container">
       <div>
@@ -28,9 +32,7 @@ const Navbar = (props) => {
         </ul>
       </div>
       <div>
-        <Link to="/services">
-          <button className="Navbar-button">Give a Pet</button>
-        </Link>
+       <Login/>
       </div>
     </div>
   );
