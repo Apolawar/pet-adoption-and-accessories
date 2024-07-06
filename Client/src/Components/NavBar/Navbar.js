@@ -23,6 +23,10 @@ const Navbar = (props) => {
             <Link to="/pets">Pets</Link>
           </li>
           <li>
+            <Link to="/Accessories">Accessories</Link>
+          </li>
+
+          <li>
             <Link to="/contact">Contact Us</Link>
           </li>
         </ul>

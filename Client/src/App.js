@@ -8,6 +8,7 @@ import Contact from "./Components/Contact/Contact";
 import Pets from "./Components/Pets/Pets";
 import AdoptForm from "./Components/AdoptForm/AdoptForm";
 import AdminLogin from "./Components/AdminPanel/AdminLogin";
+import Accessories from "./Components/Accessories/Accessories";
 import "./App.css";
 
 const Layout = ({ children }) => (
@@ -54,6 +55,7 @@ const App = () => {
             </Layout>
           } 
         />
+        
         <Route 
           path="/adopt-form" 
           element={
@@ -66,7 +68,16 @@ const App = () => {
           path="/admin" 
           element={<AdminLogin />} 
         />
+        <Route 
+          path="/Accessories" 
+          element={
+            <Layout>
+              <Accessories />
+            </Layout>
+          } 
+        />
       </Routes>
+      
     </Router>
   );
 };

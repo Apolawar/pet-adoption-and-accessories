@@ -36,18 +36,24 @@
     justify-content: center;
 }
 
-.logo-container>p {
+.logo-container > p {
     font-family: 'Oxygen', sans-serif;
     margin-left: 10px;
     font-size: 29px;
 }
 
+.navbar-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 .navbar-links li {
-    display: inline;
     margin: 0 10px;
 }
 
-.navbar-links li>* {
+.navbar-links li > * {
     text-decoration: none;
     border: 2px var(--white) solid;
     padding: 5px 15px;
@@ -58,7 +64,7 @@
     color: var(--black);
 }
 
-.navbar-links li>*:hover {
+.navbar-links li > *:hover {
     border: 2px var(--hoverorange) solid;
     background-color: var(--hoverorange);
     color: var(--white);
@@ -71,10 +77,20 @@
         align-items: center;
     }
 
-    .navbar-container>* {
+    .navbar-container > * {
         margin-bottom: 10px;
     }
+
+    .navbar-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-links li {
+        margin: 5px 0;
+    }
 }
+
 
 .home-container {
     padding: 20px 50px 70px 50px;
@@ -1129,6 +1145,7 @@ body {
 }
 
 .email-not-valid p {
+    display: flex;
     font-family: "Varela Round", sans-serif;
     color: rgb(231, 58, 58);
     font-size: 14px;
@@ -1178,12 +1195,16 @@ body {
     background-color: var(--textGrey);
     color: var(--black);
     padding-top: 20px;
+    display: flex;
+    flex-direction: column; /* Stack the logo and the footer content vertically */
+    align-items: center; /* Center the content horizontally */
 }
 
 .footer-content {
     text-align: center;
 }
 
+/* Styling for the mail links */
 .mail-links {
     color: var(--black);
     text-decoration: none;
@@ -1193,26 +1214,46 @@ body {
     text-decoration: underline;
 }
 
+/* Styling for the contact links */
 .contact-links {
     color: var(--black);
     text-decoration: none;
-    padding: 5px;
+    padding: 5px 10px; /* Add padding around the links */
+    margin: 0 10px; /* Add space between links */
+    border-radius: 20px; /* Rounded corners for the links */
 }
 
 .contact-links:hover {
-    background-color: var(--orange);
-    color: var(--white);
-    text-shadow: 2px 2px 2px var(--orange);
-    text-decoration: none;
-    border-radius: 20px;
+    background-color: var(--orange); /* Background color on hover */
+    color: var(--white); /* Text color on hover */
+    text-shadow: 2px 2px 2px var(--orange); /* Text shadow on hover */
+    text-decoration: none; /* Remove underline on hover */
 }
 
+/* Styling for the section below the logo */
 .below-footer {
-    background-color: var(--textGrey);
-    color: var(--black);
+    display: flex;
+    flex-direction: column; /* Stack items vertically (for text and links) */
+    align-items: center; /* Center items horizontally */
+    gap: 10px; /* Add space between items */
     padding: 10px;
     text-align: center;
     line-height: 1.6;
+}
+
+/* Additional styling for the links */
+.below-footer p {
+    margin: 0; /* Remove default margin */
+}
+
+/* Flexbox styling for the contact links section */
+.below-footer > p {
+    display: flex;
+    flex-direction: row; /* Align links horizontally */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center links horizontally */
+    align-items: center; /* Center links vertically */
+    gap: 10px; /* Space between links */
 }
 
 
