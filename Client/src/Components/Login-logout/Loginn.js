@@ -2,42 +2,44 @@ import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
-import { useForm } from "react-hook-form";
+import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { useAuth } from '../../context/AuthProvider';
 
 function Login() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [show, setShow] = useState(false);
+  const { setAuthUser } = useAuth();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const onSubmit = async(data) => {
-   const userInfo={
-    email:data.email,
-    password:data.password
-   }
-   await axios.post("http://localhost:4000/user/login",userInfo)
-   .then((res)=>{
-    console.log(res.data)
-    if(res.data){
-     Swal.fire({
-  title: "Welcome",
-  text: "You Logged in Successfully!",
-  icon: "success"
-});
-    }
-    localStorage.setItem("Users",JSON.stringify(res.data.user));
-   }).catch((err)=>{
-console.log(err)
-Swal.fire({
-  icon: "error",
-  title: "Oops...",
-  text: "Invalid password or usernmae",
-});
-   })
- 
+  const onSubmit = async (data) => {
+    const userInfo = {
+      email: data.email,
+      password: data.password
+    };
+
+    await axios.post('http://localhost:4000/user/login', userInfo)
+      .then((res) => {
+        if (res.data) {
+          Swal.fire({
+            title: 'Welcome',
+            text: 'You Logged in Successfully!',
+            icon: 'success'
+          });
+          localStorage.setItem('Users', JSON.stringify(res.data.user));
+          setAuthUser(res.data.user); // Update authUser state
+          handleClose(); // Close the modal on successful login
+        }
+      }).catch((err) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Invalid password or username',
+        });
+      });
   };
 
   return (
@@ -58,7 +60,7 @@ Swal.fire({
                 type="email"
                 placeholder="Enter your email"
                 autoFocus
-                {...register("email", { required: true })}
+                {...register('email', { required: true })}
               />
               {errors.email && <p className="error-text">*Email is required</p>}
             </Form.Group>
@@ -66,7 +68,7 @@ Swal.fire({
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
-                {...register("password", { required: true })}
+                {...register('password', { required: true })}
               />
               {errors.password && <p className="error-text">*Password is required</p>}
             </Form.Group>

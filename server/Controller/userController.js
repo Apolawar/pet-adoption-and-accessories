@@ -23,7 +23,7 @@ const signup = async (req, res) => {
     });
 
     // Save the new user to the database
-    await newUser.save();
+    await createUser.save();
 
     // Send a success response
     res.status(201).json({ message: 'User created successfully' ,user:{

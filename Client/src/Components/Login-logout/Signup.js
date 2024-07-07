@@ -77,12 +77,13 @@ alert(err.response.data.message);
                   />
                   {errors.password && <p className="error-text">*Password is required</p>}
                 </Form.Group>
+                <hr />
                 <Modal.Footer className="modal-footer-custom">
                   <Button type="submit" className="login-button">SignUp</Button>
                 </Modal.Footer>
               </Form>
             </Modal.Body>
-            <hr />
+            
             <Modal.Footer className="modal-footer-custom">
               <p className="signup-text">
                 Already have an account? <Link to="/">Login</Link>
