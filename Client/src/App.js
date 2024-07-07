@@ -1,3 +1,5 @@
+// App.js or Routes.js
+
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./Components/NavBar/Navbar";
@@ -31,7 +33,7 @@ const App = () => {
         <Route path="/services" element={authUser ? <Layout><Services /></Layout> : <Navigate to="/signup" />} />
         <Route path="/contact" element={authUser ? <Layout><Contact /></Layout> : <Navigate to="/signup" />} />
         <Route path="/pets" element={authUser ? <Layout><Pets /></Layout> : <Navigate to="/signup" />} />
-        <Route path="/accessories" element={authUser?<Layout><Accessories/></Layout>:<Navigate to="/singmup"/>} />
+        <Route path="/accessories" element={authUser ? <Layout><Accessories /></Layout> : <Navigate to="/signup" />} />
         <Route path="/adopt-form" element={authUser ? <Layout><AdoptForm /></Layout> : <Navigate to="/signup" />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/admin" element={<AdminLogin />} />
@@ -41,4 +43,3 @@ const App = () => {
 };
 
 export default App;
-

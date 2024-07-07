@@ -1,13 +1,19 @@
+// Login-logout/Signup.js
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { useAuth } from '../../context/AuthProvider';
 
 function Signup() {
+  const { setAuthUser } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [show, setShow] = useState(false);
 
@@ -15,32 +21,34 @@ function Signup() {
   const handleShow = () => setShow(true);
 
   const onSubmit = async (data) => {
-   const userInfo={
-    name:data.name,
-    email:data.email,
-    password:data.password
-   }
-   await axios.post("http://localhost:4000/user/signup",userInfo)
-   .then((res)=>{
-    console.log(res.data)
-    if(res.data){
-     Swal.fire({
-  title: "Welcome",
-  text: "SignUp Successfully!",
-  icon: "success"
-});
+    const userInfo = {
+      name: data.name,
+      email: data.email,
+      password: data.password
     }
-    localStorage.setItem("Users",JSON.stringify(res.data.user));
-   }).catch((err)=>{
-console.log(err)
-alert(err.response.data.message);
-   })
+    await axios.post("http://localhost:4000/user/signup", userInfo)
+      .then((res) => {
+        console.log(res.data)
+        if (res.data) {
+          Swal.fire({
+            title: "Welcome",
+            text: "SignUp Successfully!",
+            icon: "success"
+          });
+          localStorage.setItem("Users", JSON.stringify(res.data.user));
+          setAuthUser(res.data.user); // Update auth state
+          navigate(from, { replace: true });
+        }
+
+      }).catch((err) => {
+        console.log(err)
+        alert(err.response.data.message);
+      })
 
   };
 
   return (
     <>
-
       <div show={show} onHide={handleClose}>
         <div className="signupstyle">
           <div className="modal-box">
@@ -83,7 +91,7 @@ alert(err.response.data.message);
                 </Modal.Footer>
               </Form>
             </Modal.Body>
-            
+
             <Modal.Footer className="modal-footer-custom">
               <p className="signup-text">
                 Already have an account? <Link to="/">Login</Link>

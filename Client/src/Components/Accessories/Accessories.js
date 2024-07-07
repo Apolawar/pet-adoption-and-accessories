@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import CustomHTML from "./Questions";
-import "./Service.css";
 import Accordion from "./Accordian";
 
 const Accessories = (props) => {

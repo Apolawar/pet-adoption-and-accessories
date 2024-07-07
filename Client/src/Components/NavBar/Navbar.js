@@ -48,7 +48,6 @@ import { Link } from 'react-router-dom';
 import logo from './images/logo.png';
 import Login from '../Login-logout/Loginn';
 import Logout from '../Login-logout/Logout';
-import Signup from  '../Login-logout/Signup';
 import { useAuth } from '../../context/AuthProvider';
 
 const Navbar = (props) => {
