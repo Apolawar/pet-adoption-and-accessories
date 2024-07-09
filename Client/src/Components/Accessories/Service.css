@@ -365,8 +365,13 @@
   }
   
   .hero-title .span {
-    font-size: 0.3em;
+    font-size: 1.1em;
     font-family: var(--ff-bangers);
+  }
+  .hero-title h6 {
+    font-size: 2em; /* Adjust the size as needed */
+    display: block;
+    margin: 0;
   }
   
   .hero-text {
@@ -379,16 +384,20 @@
   margin-top: 10px;
   
   }
-  .pet-food {
-    font-size: 0.5em !important;
-  }
+ 
   
   .hero .btn { margin-top: 15px; /* Adjust the top margin as needed */
     margin-right: auto; /* Center horizontally */
     margin-bottom: auto;
-    margin-left: 10px; }
+    margin-left: 10px;
+    font-size: 1.5em; /* Adjust the size as needed */
+    font-weight: bolder;
+    padding: 0.75em 1.5em; /* Adjust padding for a larger button */
+    text-align: center;
+    border-radius: 25px;
+  background-color: var(--platinum); }
   
-  .hero .btn:is(:hover, :focus) { background-color: var(--portland-orange); }
+  .hero .btn:is(:hover, :focus) { background-color: var(--bright-yellow-crayola); }
   
   
   
