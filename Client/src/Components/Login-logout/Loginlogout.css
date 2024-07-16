@@ -1,0 +1,178 @@
+/*CSS for Signup.js*/
+.modal-box {
+  width: 100%;
+  max-width: 530px; 
+  padding: 20px;
+  
+}
+
+.modal-header,
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.modal-body {
+  font-size: 1.5rem;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.9rem;
+}
+
+.login-button {
+  font-size: 1.2rem;
+  padding: 15px;
+}
+
+.signup-text {
+  font-size: medium;
+}
+
+.signup-text a {
+  font-size:medium;
+  text-decoration: underline;
+  display: inline-block;
+  text-align: center;
+}
+
+.form-label {
+  font-size: 1.25rem;
+  font-weight: bold; 
+}
+
+.form-control {
+  font-size: 1.25rem;
+  padding: 1rem !important; 
+  border-radius: 0.5rem;
+  border: 1px solid #ced4da; 
+}
+
+.form-control:focus {
+  font-size: 1.25rem;
+  padding: 1rem;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+@media (max-width: 768px) {
+  .modal-box {
+    padding: 15px;
+  }
+
+  .modal-header,
+  .modal-footer {
+    font-size: 1rem;
+  }
+
+  .modal-body {
+    font-size: 1.25rem;
+  }
+
+  .login-button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .signup-text {
+    font-size: 1rem;
+  }
+
+  .signup-text a {
+    font-size: 1.2rem;
+  }
+
+  .form-label {
+    font-size: 1.25rem;
+    font-weight: bold; 
+  }
+
+  .form-control {
+    font-size: 1rem;
+    padding: 10px;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-box {
+    padding: 10px;
+  }
+
+  .modal-header,
+  .modal-footer {
+    font-size: 0.9rem;
+  }
+
+  .modal-body {
+    font-size: 1rem;
+  }
+
+  .login-button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .signup-text {
+    font-size: 0.9rem;
+  }
+
+  .signup-text a {
+    font-size: 1.2rem;
+  }
+
+  .form-label {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .form-control {
+    font-size: 0.9rem;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+}
+.error-text{
+   color: #ff0000;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+.form-control::placeholder{
+  font-size: 1.5rem;
+}
+
+
+/* CSS for Login.js*/
+
+.form-custom .form-control-large {
+  padding: 1rem;
+  font-size: 1.25rem;
+}
+
+.form-custom .form-control-large:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+.form-custom .form-label-large {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-footer-custom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-footer-custom .login-button {
+  
+  padding: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.invalid-feedback {
+  font-size: 1rem;
+}

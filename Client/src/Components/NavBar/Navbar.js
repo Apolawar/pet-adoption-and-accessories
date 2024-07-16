@@ -4,7 +4,7 @@
 // import Login from '../Login-logout/Loginn';
 // import Logout from '../Login-logout/Logout';
 // import { useAuth } from '../../context/AuthProvider';
-
+// import '../NavBar/Navbar.css';
 // const Navbar = (props) => {
 //   const { authUser } = useAuth();
 
@@ -36,57 +36,68 @@
 //         </ul>
 //       </div>
 //       <div>
-//         {authUser ? <Logout /> : <Login />}
+//         {authUser ? <Logout /> : 
+//           <Login />}
 //       </div>
 //     </div>
 //   );
 // };
 
 // export default Navbar;
-import React from 'react';
+
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from './images/logo.png';
 import Login from '../Login-logout/Loginn';
 import Logout from '../Login-logout/Logout';
 import { useAuth } from '../../context/AuthProvider';
+import '../NavBar/Navbar.css';
 
 const Navbar = (props) => {
   const { authUser } = useAuth();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
     <div className="navbar-container">
       <div>
-        <Link className="logo-container" to="/">
+      <Link className="logo-container" to="/">
           <img className="navbar-logo" src={logo} alt="PawFinds Logo" />
-          <p>{props.title}</p>
+           <p>{props.title}</p>
         </Link>
-      </div>
-      <div>
+     </div>
+      <div className={`navbar-links-container ${menuOpen ? 'open' : ''}`}>
         <ul className="navbar-links">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" onClick={toggleMenu}>Home</Link>
           </li>
           <li>
-            <Link to="/services">Services</Link>
+            <Link to="/services" onClick={toggleMenu}>Services</Link>
           </li>
           <li>
-            <Link to="/pets">Pets</Link>
+            <Link to="/pets" onClick={toggleMenu}>Pets</Link>
           </li>
           <li>
-            <Link to="/accessories">Accessories</Link>
+            <Link to="/accessories" onClick={toggleMenu}>Accessories</Link>
           </li>
           <li>
-            <Link to="/contact">Contact Us</Link>
+            <Link to="/contact" onClick={toggleMenu}>Contact Us</Link>
           </li>
         </ul>
+        <div className="auth-links">
+          {authUser ? <Logout /> : <Login />}
+        </div>
       </div>
-      <div>
-        {authUser ? <Logout /> : 
-          <Login />}
+      <div className="hamburger" onClick={toggleMenu}>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
       </div>
     </div>
   );
 };
 
 export default Navbar;
-

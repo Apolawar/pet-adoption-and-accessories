@@ -15,83 +15,6 @@
     --darkGrey: #1F2130;
 }
 
-.navbar-container {
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 35px;
-}
-
-.navbar-logo {
-    margin-left: 10px;
-    width: 54px;
-}
-
-.logo-container {
-    color: var(--black);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.logo-container > p {
-    font-family: 'Oxygen', sans-serif;
-    margin-left: 10px;
-    font-size: 29px;
-}
-
-.navbar-links {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.navbar-links li {
-    margin: 0 10px;
-}
-
-.navbar-links li > * {
-    text-decoration: none;
-    border: 2px var(--white) solid;
-    padding: 5px 15px;
-    font-family: 'Oxygen', sans-serif;
-    font-weight: bold;
-    font-size: 15px;
-    border-radius: 20px;
-    color: var(--black);
-}
-
-.navbar-links li > *:hover {
-    border: 2px var(--hoverorange) solid;
-    background-color: var(--hoverorange);
-    color: var(--white);
-    box-shadow: 1.5px 1.5px 3px var(--hoverorange);
-}
-
-@media (max-width: 768px) {
-    .navbar-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .navbar-container > * {
-        margin-bottom: 10px;
-    }
-
-    .navbar-links {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .navbar-links li {
-        margin: 5px 0;
-    }
-}
-
 
 .home-container {
     padding: 20px 50px 70px 50px;
@@ -358,17 +281,16 @@
 }
 
 .navbar-container {
-    width: 100%;
-    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 35px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
 }
 
 .navbar-logo {
     margin-left: 10px;
-    width: 54px;
+    width: 54px; 
 }
 
 .logo-container {
@@ -1626,75 +1548,5 @@ body {
     box-shadow: 2px 2px 5px var(--hoverorange);
     animation: bounce 0.5s ease;
     cursor: pointer;
-}
-
-.signup-text {
-  margin-top: 10px;
-}
-
-.signup-text span {
-  color: #007bff;
-  text-decoration: underline;
-}
-
-.signup-text span:hover {
-  text-decoration: underline;
-}
-.signupstyle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Optional: To add a background overlay */
-}
-
-.modal-box {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  max-width: 500px;
-  width: 100%;
-}
-.error-text{
-    color: red;
-}
-.Logoutbutton{
-    border: 2px red solid;
-    height: 42px;
-    width: 105px;
-    font-family: 'Oxygen', sans-serif;
-    font-weight: bold;
-    font-size: 15px;
-    border-radius: 20px;
-    background-color: red;
-    color: var(--white);
-    box-shadow: 1.5px 1.5px 3px red;
-    transition: all 0.3s ease; 
-}
-.Logoutbutton:hover {
- border: 2px red solid;
-    background-color: red;
-    color: var(--white);
-    transform: scale(1.05); 
-    box-shadow: 2px 2px 5px red;
-    animation: bounce 0.5s ease;
-    cursor: pointer;
-}
-.close-icon {
-  float: right;
-  margin-top: -10px;
-}
-
-.close-link {
-  text-decoration: none;
-  color: black;
-}
-
-.close-link:hover {
-  color: red;
 }
 

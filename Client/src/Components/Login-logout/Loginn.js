@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useAuth } from '../../context/AuthProvider';
+import './Loginlogout.css'; 
 
 function Login() {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -48,33 +49,36 @@ function Login() {
         Login
       </button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} centered>
         <Modal.Header closeButton>
-          <Modal.Title>Login</Modal.Title>
+          <Modal.Title><h3>Login</h3></Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form onSubmit={handleSubmit(onSubmit)}>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Email address</Form.Label>
+          <Form onSubmit={handleSubmit(onSubmit)} className="form-custom">
+            <Form.Group className="mb-3" controlId="formEmail">
+              <Form.Label className="form-label-large">Email address</Form.Label>
               <Form.Control
                 type="email"
                 placeholder="Enter your email"
                 autoFocus
                 {...register('email', { required: true })}
+                className={`form-control-large ${errors.email ? 'is-invalid' : ''}`}
               />
-              {errors.email && <p className="error-text">*Email is required</p>}
+              {errors.email && <div className="invalid-feedback">*Email is required</div>}
             </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-              <Form.Label>Password</Form.Label>
+            <Form.Group className="mb-3" controlId="formPassword">
+              <Form.Label className="form-label-large">Password</Form.Label>
               <Form.Control
                 type="password"
+                placeholder="Enter your password"
                 {...register('password', { required: true })}
+                className={`form-control-large ${errors.password ? 'is-invalid' : ''}`}
               />
-              {errors.password && <p className="error-text">*Password is required</p>}
+              {errors.password && <div className="invalid-feedback">*Password is required</div>}
             </Form.Group>
             <Modal.Footer className="modal-footer-custom">
               <button type="submit" className="login-button">Login</button>
-              <p className="signup-text">
+              <p className="signup-text mt-3">
                 Not Registered? <Link to="/signup">Signup</Link>
               </p>
             </Modal.Footer>
