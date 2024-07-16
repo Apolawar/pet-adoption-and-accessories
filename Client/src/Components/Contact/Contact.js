@@ -43,21 +43,23 @@ const Contact = () => {
   );
 };
 
-// Function to check and update the layout based on window width
-function checkWidth() {
-  var container = document.querySelector('.container');
-  if (window.innerWidth <= 768) {
-    container.classList.add('column');
-  } else {
-    container.classList.remove('column');
-  }
-}
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Function to check and update the layout based on window width
+//   function checkWidth() {
+//     var container = document.querySelector(".container");
+//     if (window.innerWidth <= 768) {
+//       container.classList.add("column");
+//     } else {
+//       container.classList.remove("column");
+//     }
+//   }
 
-// Add event listeners for resize and load events
-window.addEventListener('resize', checkWidth);
-window.addEventListener('load', checkWidth);
+//   // Add event listeners for resize and load events
+//   window.addEventListener("resize", checkWidth);
+//   window.addEventListener("load", checkWidth);
 
-// Initial check on page load
-checkWidth();
+//   // Initial check on page load
+//   checkWidth();
+// });
 
 export default Contact;
