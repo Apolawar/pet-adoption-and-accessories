@@ -6,6 +6,8 @@
   padding: 20px;
   background-color: #333;
   color: white;
+  min-height: 200px; /* Increase the minimum height of the grey box */
+  flex-wrap: wrap;
 }
 
 .left-pic,
@@ -24,6 +26,7 @@
 .right-para {
   flex: 2;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 .adopted-pets-num {
@@ -41,38 +44,32 @@
   .dark-grey-container {
     flex-direction: column;
     align-items: center;
+    min-height:fit-content; /* Adjust height for mobile view */
   }
 
   .left-para,
-  .left-pic,
-  .right-para,
-  .right-pic {
+  .left-pic {
     width: 100%;
-    padding: 10px;
+    padding: 0px;
     text-align: center;
   }
 
   .left-para {
     order: 1;
-    margin-top: 20px;
-    height: 200px;
+    margin-top: 10px;
+    margin-right: -100px;
   }
 
   .left-pic {
     order: 2;
   }
 
-  .right-para {
-    order: 3;
-    margin-top: 20px;
-  }
-
+  .right-para,
   .right-pic {
-    order: 4;
+    display: none; /* Hide the right paragraph and image in mobile view */
   }
 
-  .left-pic img,
-  .right-pic img {
-    max-width: 80%; /* Increase the size of images */
+  .left-pic img {
+    max-width: 200%; /* Increase the size of the first image */
   }
 }

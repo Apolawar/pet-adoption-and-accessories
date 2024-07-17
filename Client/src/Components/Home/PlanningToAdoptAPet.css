@@ -1,0 +1,60 @@
+/* General styles for the planning container */
+.planning-container {
+  padding: 20px;
+}
+
+.planning-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.boxes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adds space between cards */
+}
+
+.card {
+  flex: 1;
+  min-width: 300px;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Media queries for mobile view */
+@media (max-width: 768px) {
+  .boxes-container {
+    flex-direction: column;
+    align-items: stretch; /* Ensures the cards take full width */
+  }
+
+  .card {
+    width: 100%; /* Ensures full width for each card */
+    margin: 10px 0; /* Adds margin between cards */
+    padding: 15px; /* Reduces padding for a better fit on mobile */
+  }
+
+  .card h2 {
+    font-size: 1.25rem; /* Adjusts the heading size for mobile */
+  }
+
+  .card p {
+    font-size: 1rem; /* Maintains the font size for better readability */
+    line-height: 1.5; /* Adjusts line height for better readability */
+    text-align: justify; /* Ensures the text is justified */
+  }
+}

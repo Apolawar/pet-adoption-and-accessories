@@ -80,6 +80,7 @@
 
   .home-titlePlusPng {
     justify-content: center;
+    margin-top: -35px;
   }
 
   .adopt-btn {
@@ -89,5 +90,9 @@
 
   .homeContainer-right img {
     transform: scale(1.5); 
+  }
+
+  .home-title{
+    margin-left: -25px;
   }
 }
