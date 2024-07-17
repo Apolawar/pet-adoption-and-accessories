@@ -3,6 +3,7 @@ import girlHoldingADog from "./images/girlHoldingADog.png";
 import homepageDog from "./images/homepageDog.png";
 import footPrint from "./images/footPrint.png";
 import { Link } from "react-router-dom";
+import './HomeLandingContainer.css';
 
 const HomeLandingContainer = (props) => {
   const scrollToTop = () => {

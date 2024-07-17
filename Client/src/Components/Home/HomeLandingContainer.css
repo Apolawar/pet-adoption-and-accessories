@@ -1,0 +1,93 @@
+/* General styles for the home container */
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.homeContainer-left,
+.homeContainer-right {
+  flex: 1;
+}
+
+.homeContainer-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.home-titlePlusPng {
+  display: flex;
+  align-items: center;
+}
+
+.home-titlePlusPng img {
+  margin-left: 10px;
+}
+
+.home-second-para {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.adopt-btn {
+  display: flex;
+  align-items: center;
+}
+
+.Home-button {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Home-button img {
+  margin-left: 10px;
+}
+
+.Home-button:hover {
+  background-color: #0056b3;
+}
+
+.homeContainer-right img {
+  max-width: 190%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .homeContainer-left,
+  .homeContainer-right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .home-titlePlusPng {
+    justify-content: center;
+  }
+
+  .adopt-btn {
+    justify-content: center;
+    margin-bottom: 80px;
+  }
+
+  .homeContainer-right img {
+    transform: scale(1.5); 
+  }
+}

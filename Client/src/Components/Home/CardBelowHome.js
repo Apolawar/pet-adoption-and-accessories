@@ -1,6 +1,7 @@
 import React from 'react';
 import HomeDarkCardLeftPic from "./images/HomeDarkCardLeftPic.png";
 import HomeDarkCardRightPic from "./images/HomeDarkCardRightPic.png";
+import './CardBelowHome.css'
 
 const formatNumber = (number) => {
     const suffixes = ['', 'k', 'M', 'B', 'T'];
