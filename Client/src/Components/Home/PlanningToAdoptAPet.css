@@ -1,60 +1,61 @@
-/* General styles for the planning container */
-.planning-container {
-  padding: 20px;
-}
+/* PlanningToAdoptAPet.css */
 
-.planning-container h1 {
+.planning-container {
   text-align: center;
-  margin-bottom: 20px;
+  padding: 20px;
 }
 
 .boxes-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Adds space between cards */
+  justify-content: center;
+  gap: 20px;
 }
 
 .card {
-  flex: 1;
-  min-width: 300px;
-  margin: 10px;
-  padding: 20px;
+  width: 300px; /* default width */
+  padding: 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+.card-head {
+  color: var(--orange);
 }
 
-.card h2 {
-  margin-top: 0;
-  font-size: 1.5rem;
+.card:hover {
+  transform: scale(1.05);
 }
 
-.card p {
-  font-size: 1rem;
-  line-height: 1.5;
+.card-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
-/* Media queries for mobile view */
-@media (max-width: 768px) {
+.card-description {
+  font-size: 1em;
+  color: #555;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 600px) {
   .boxes-container {
     flex-direction: column;
-    align-items: stretch; /* Ensures the cards take full width */
+    align-items: center;
   }
 
   .card {
-    width: 100%; /* Ensures full width for each card */
-    margin: 10px 0; /* Adds margin between cards */
-    padding: 15px; /* Reduces padding for a better fit on mobile */
+    width: 100%; /* Full width with some padding */
+    margin-bottom: 20px; /* Space between cards */
   }
 
-  .card h2 {
-    font-size: 1.25rem; /* Adjusts the heading size for mobile */
+  .card-title {
+    font-size: 1.2em; /* Slightly smaller font size */
+    margin-bottom: 5px; /* Less margin */
   }
 
-  .card p {
-    font-size: 1rem; /* Maintains the font size for better readability */
-    line-height: 1.5; /* Adjusts line height for better readability */
-    text-align: justify; /* Ensures the text is justified */
+  .card-description {
+    font-size: 0.9em; /* Slightly smaller font size */
   }
 }

@@ -22,7 +22,7 @@
 }
 
 .logo-container > p {
-  font-family: 'Oxygen', sans-serif;
+  font-family: "Oxygen", sans-serif;
   margin-left: 10px;
   font-size: 29px;
 }
@@ -48,7 +48,7 @@
   text-decoration: none;
   border: 2px var(--white) solid;
   padding: 5px 15px;
-  font-family: 'Oxygen', sans-serif;
+  font-family: "Oxygen", sans-serif;
   font-weight: bold;
   font-size: 15px;
   border-radius: 20px;
@@ -81,8 +81,8 @@
 
 @media (max-width: 768px) {
   .navbar-container {
-    flex-direction: column;
-    align-items: flex-start;
+    /* flex-direction: column; */
+    align-items: center;
   }
 
   .navbar-links-container {
