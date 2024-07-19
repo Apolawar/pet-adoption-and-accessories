@@ -1,0 +1,61 @@
+/* PlanningToAdoptAPet.css */
+
+.planning-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.boxes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 300px; /* default width */
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+.card-head {
+  color: var(--orange);
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-size: 1em;
+  color: #555;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 600px) {
+  .boxes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%; /* Full width with some padding */
+    margin-bottom: 20px; /* Space between cards */
+  }
+
+  .card-title {
+    font-size: 1.2em; /* Slightly smaller font size */
+    margin-bottom: 5px; /* Less margin */
+  }
+
+  .card-description {
+    font-size: 0.9em; /* Slightly smaller font size */
+  }
+}

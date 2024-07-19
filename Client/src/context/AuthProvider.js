@@ -1,16 +1,24 @@
-import React, { createContext, useContext, useState } from 'react';
+// context/AuthProvider.js
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
-export const AuthContext = createContext();
+const AuthContext = createContext();
 
+export const AuthProvider = ({ children }) => {
+  const [authUser, setAuthUser] = useState(null);
 
-export default function AuthProvider({ children }) {
-  const initialAuthUser = localStorage.getItem("authUser");
-  const [authUser, setAuthUser] = useState(initialAuthUser ? JSON.parse(initialAuthUser) : undefined);
+  useEffect(() => {
+    const user = localStorage.getItem('Users');
+    if (user) {
+      setAuthUser(JSON.parse(user));
+    }
+  }, []);
 
   return (
     <AuthContext.Provider value={{ authUser, setAuthUser }}>
       {children}
     </AuthContext.Provider>
   );
-}
+};
+
 export const useAuth = () => useContext(AuthContext);
+

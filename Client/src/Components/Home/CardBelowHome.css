@@ -1,0 +1,75 @@
+/* General styles for the dark grey container */
+.dark-grey-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  min-height: 200px; /* Increase the minimum height of the grey box */
+  flex-wrap: wrap;
+}
+
+.left-pic,
+.right-pic {
+  flex: 1;
+  text-align: center;
+}
+
+.left-pic img,
+.right-pic img {
+  max-width: 100%;
+  height: auto;
+}
+
+.left-para,
+.right-para {
+  flex: 2;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.adopted-pets-num {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.we-do {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Media queries for mobile view */
+@media (max-width: 768px) {
+  .dark-grey-container {
+    flex-direction: column;
+    align-items: center;
+    min-height:fit-content; /* Adjust height for mobile view */
+  }
+
+  .left-para,
+  .left-pic {
+    width: 100%;
+    padding: 0px;
+    text-align: center;
+  }
+
+  .left-para {
+    order: 1;
+    margin-top: 10px;
+    margin-right: -100px;
+  }
+
+  .left-pic {
+    order: 2;
+  }
+
+  .right-para,
+  .right-pic {
+    display: none; /* Hide the right paragraph and image in mobile view */
+  }
+
+  .left-pic img {
+    max-width: 200%; /* Increase the size of the first image */
+  }
+}
