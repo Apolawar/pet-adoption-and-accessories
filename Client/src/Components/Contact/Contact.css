@@ -1,21 +1,70 @@
+/* Base styles for larger screens */
 .container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: flex-start; /* Align items to the start */
+  flex-wrap: wrap; /* Allows wrapping to new lines if necessary */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .content {
-  width: 60%;
+  flex: 1;
+  max-width: 60%;
+  box-sizing: border-box;
 }
 
 .image {
-  width: 35%;
+  flex: 1;
+  max-width: 35%;
+  box-sizing: border-box;
+  height: auto; /* Maintain aspect ratio */
 }
 
-.column .content, .column .image {
-  width: 100%;
+/* For tablets and below */
+@media (max-width: 1024px) {
+  .content {
+    max-width: 65%;
+  }
+
+  .image {
+    max-width: 30%;
+  }
 }
 
-.column {
-  flex-direction: column;
+/* For larger mobile phones and below */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: row; /* Keep items side by side */
+    align-items: center;
+    justify-content: center; /* Center the content and image */
+  }
+
+  .content {
+    max-width: 60%;
+  }
+
+  .image {
+    max-width: 35%;
+  }
 }
+
+/* For smaller mobile phones */
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center-align items */
+    gap: 10px; /* Space between content and image */
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .image {
+    max-width: 100%; /* Ensure image fits within the container */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
