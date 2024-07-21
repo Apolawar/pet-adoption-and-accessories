@@ -34,11 +34,9 @@ import brand3 from '../assets/brand-3.jpg';
 import brand4 from '../assets/brand-4.jpg';
 import brand5 from '../assets/brand-5.jpg';
 
+import './Question.css';
 
-
-
-
-import './Service.css';
+// import './Service.css';
 
 const CustomHTML = () => {
     const backgroundImageStyle = {

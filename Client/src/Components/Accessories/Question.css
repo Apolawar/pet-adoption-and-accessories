@@ -1,0 +1,186 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+main {
+  overflow: hidden;
+}
+
+/* Hero Section */
+.hero {
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.hero-title {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.hero-text {
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #ff4500;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.5rem;
+}
+
+/* Category Section */
+.category .container {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.category-card {
+  margin: 1rem 0;
+}
+
+.category-card .img-holder {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.img-cover {
+  width: 100%;
+  height: auto;
+}
+
+.card-title {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Offer Section */
+.offer {
+  padding: 2rem 1rem;
+}
+
+.offer-card {
+  margin: 1rem 0;
+  text-align: center;
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.offer-card .btn {
+  margin-top: 1rem;
+}
+
+/* Product Section */
+.product .container {
+  padding: 2rem 1rem;
+}
+
+.product-card {
+  margin: 1rem 0;
+}
+
+.product-card .img-holder {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.card-action-btn {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ff4500;
+  font-size: 1.5rem;
+}
+
+/* Service Section */
+.service .container {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.service-card {
+  margin: 1rem 0;
+}
+
+.service-card .card-icon {
+  margin-bottom: 1rem;
+}
+
+.service-card .card-title {
+  margin-bottom: 0.5rem;
+}
+
+/* CTA Section */
+.cta {
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.cta .cta-content {
+  max-width: 600px;
+  margin: auto;
+}
+
+.cta .btn {
+  margin-top: 1rem;
+}
+
+/* Brand Section */
+.brand .container {
+  padding: 2rem 1rem;
+}
+
+.brand-card {
+  margin: 1rem 0;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hero {
+    padding: 4rem 1rem;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-text {
+    font-size: 0.875rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+  }
+
+  .category .container, .product .container, .offer .container, .service .container, .brand .container {
+    padding: 1rem 1rem;
+  }
+
+  .offer-card {
+    padding: 1rem;
+  }
+
+  .product-card .img-holder, .brand-card .img-holder {
+    width: 100%;
+    height: auto;
+  }
+
+  .product-card .card-action-btn {
+    bottom: 0.5rem;
+    right: 0.5rem;
+  }
+}

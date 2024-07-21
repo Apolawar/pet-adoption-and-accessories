@@ -97,9 +97,7 @@ const Navbar = (props) => {
         </div>
       </div>
       <div
-        className={`navbar-links-container bg-white   ${
-          menuOpen ? "d-block" : "d-none"
-        }`}
+        className={`navbar-links-container  ${menuOpen ? "d-block" : "d-none"}`}
       >
         <ul className="navbar-links">
           <li>
