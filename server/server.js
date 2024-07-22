@@ -7,9 +7,15 @@ const AdminRoute = require('./Routes/AdminRoute');
 const userRoute = require('./Routes/userRoute');
 const cors = require('cors');
 const path = require('path');
-const app = express();
 
-app.use(cors());
+const app = express();
+app.use(cors(
+  {
+    origin: ["https://pet-adoption-and-accessories.vercel.app/"],
+    methods: ["POST", "GET"],
+    credentials: true
+  }
+));
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
@@ -22,7 +28,7 @@ app.use('/admin', AdminRoute);
 app.use('/user', userRoute);
 
 mongoose
-  .connect("mongodb://localhost:27017/pet", {
+  .connect("mongodb+srv://polawaranant1:s8yzmiZuaO4UNo5u@mycluster.t6paxsz.mongodb.net/MyCluster?retryWrites=true&w=majority&appName=MyCluster", {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
