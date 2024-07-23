@@ -90,7 +90,7 @@ const Navbar = (props) => {
           </ul>
           <div className="auth-links">{authUser ? <Logout /> : <Login />}</div>
         </div>
-        <div className="hamburger" onClick={toggleMenu}>
+        <div className="hamburger " onClick={toggleMenu}>
           <div className="line"></div>
           <div className="line"></div>
           <div className="line"></div>
@@ -126,9 +126,9 @@ const Navbar = (props) => {
             </Link>
           </li>
         </ul>
-        <div className="auth-links">{authUser ? <Logout /> : <Login />}</div> 
+        <div className="auth-links">{authUser ? <Logout /> : <Login />}</div>
       </div>
-      <div className="hamburger" onClick={toggleMenu}>
+      <div className="hamburger d-none " onClick={toggleMenu}>
         <div className="line"></div>
         <div className="line"></div>
         <div className="line"></div>
