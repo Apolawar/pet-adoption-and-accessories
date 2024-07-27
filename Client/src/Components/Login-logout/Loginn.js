@@ -27,7 +27,7 @@ function Login() {
     };
 
     await axios
-      .post(`${process.env.BACKEND_URI}/user/login`, userInfo)
+      .post(`${process.env.REACT_APP_BACKEND_URI}/user/login`, userInfo)
       .then((res) => {
         if (res.data) {
           Swal.fire({
