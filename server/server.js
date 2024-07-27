@@ -10,7 +10,7 @@ const path = require("path");
 
 const app = express();
 app.use(cors());
-
+app.use("/", express.static(path.join(__dirname, "public")));
 app.use("/images", express.static(path.join(__dirname, "images")));
 
 app.use(express.json());
@@ -22,7 +22,7 @@ app.use("/admin", AdminRoute);
 app.use("/user", userRoute);
 
 const PORT = process.env.PORT || 4000;
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/pet";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://kulkarniapurva132:MQZTBJcGGNG07ttD@petcluster.wbcswbs.mongodb.net/petdb?retryWrites=true&w=majority&appName=PetCluster";
 
 mongoose
   .connect(MONGODB_URI, {
