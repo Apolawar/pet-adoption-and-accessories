@@ -21,14 +21,16 @@ app.use("/form", AdoptFormRoute);
 app.use("/admin", AdminRoute);
 app.use("/user", userRoute);
 
+const PORT = process.env.PORT || 4000;
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/pet";
+
 mongoose
-  .connect("mongodb://localhost:27017/pet", {
+  .connect(MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => {
     console.log("Connected to DB");
-    const PORT = 4000;
     app.listen(PORT, () => {
       console.log(`Listening on port ${PORT}`);
     });
