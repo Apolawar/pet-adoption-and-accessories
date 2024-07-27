@@ -21,6 +21,11 @@ app.use("/form", AdoptFormRoute);
 app.use("/admin", AdminRoute);
 app.use("/user", userRoute);
 
+// Temporary test route
+app.get('/test', (req, res) => {
+  res.send('Server is working!');
+});
+
 const PORT = process.env.PORT || 4000;
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/pet";
 
@@ -36,5 +41,9 @@ mongoose
     });
   })
   .catch((err) => {
-    console.error(err);
+    console.error("Error connecting to MongoDB:", err);
+    process.exit(1);
   });
+
+module.exports = app; 
+
